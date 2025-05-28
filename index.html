@@ -18,8 +18,9 @@
       background: white;
       padding: 30px;
       border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-    h1 {
+    h1, h2 {
       color: #2c3e50;
     }
     a {
@@ -29,29 +30,48 @@
     a:hover {
       text-decoration: underline;
     }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #28a745;
+      color: white;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #888;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>👋 Welcome to My Page</h1>
-    <p>I'm Saem. Connect with me:</p>
+    <p>I'm Saem. Feel free to connect and explore some helpful resources:</p>
 
+    <p><a href="https://www.linkedin.com/in/your-username/" target="_blank">🔗 Connect on LinkedIn</a></p>
+
+    <h2>💳 First Time Getting a Credit Card?</h2>
+    <p>If you're new to the world of credit cards, Discover® is a fantastic place to start. No annual fees, great cashback, and an easy app experience.</p>
+    <p>As a bonus, you'll get <strong>$100 free</strong> just for signing up and making your first purchase within 3 months!</p>
+    
+    <p><a class="button" href="https://refer.discover.com/s/emdadi0" target="_blank">👉 Get Your First Card – $100 Bonus</a></p>
+    
+    <p><small>Note: You'll receive a $100 statement credit, and so will I. Win-win! Offer valid for new Discover customers. Terms apply.</small></p>
+    <img src="https://www.discover.com/content/dam/dfs/card/images/cards/front/discover-it-card.png" alt="Discover it Card" style="max-width:200px; margin-top:10px;">
+
+    <h2>💸 Other Referral Deals</h2>
     <ul>
-
-        <h2>💳 First Time Getting a Credit Card?</h2>
-        <p>If you're new to the world of credit cards, Discover® is a fantastic place to start. No annual fees, great cashback, and an easy app experience.</p>
-        <p>As a bonus, you'll get <strong>$100 free</strong> just for signing up and making your first purchase within 3 months!</p>
-        
-        <p><a href="https://refer.discover.com/s/emdadi0" target="_blank" style="padding:10px 20px; background:#28a745; color:white; border-radius:5px; font-weight:bold;">
-        👉 Get Your First Card – $100 Bonus
-        </a></p>
-        
-        <p><small>Note: You'll receive a $100 statement credit, and so will I. Win-win! Offer valid for new Discover customers. Terms apply.</small></p>
-      <img src="https://www.discover.com/content/dam/dfs/card/images/cards/front/discover-it-card.png" alt="Discover it Card" style="max-width:200px; margin-top:10px;">
-<h2>💸 Referral Deals</h2>
-
-      <li><a href="https://your-bank-referral.com" target="_blank">🏦 Bank Referral</a></li>
+      <li><a href="https://your-bank-referral.com" target="_blank">🏦 My Favorite Bank Referral</a></li>
+      <!-- You can add more here -->
     </ul>
+
+    <div class="footer">
+      &copy; 2025 Saem. Thanks for visiting!
+    </div>
   </div>
 </body>
 </html>
