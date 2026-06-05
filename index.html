@@ -43,7 +43,6 @@
     overflow-x:hidden;
   }
 
-  /* floating star glints */
   .stars{position:fixed;inset:0;pointer-events:none;z-index:0;}
   .star{
     position:absolute;color:var(--gold);opacity:0;
@@ -62,7 +61,7 @@
     padding:30px 22px 60px;
   }
 
-  /* ---------- HERO ---------- */
+  /* HERO */
   .hero{
     text-align:center;
     padding:60px 24px 50px;
@@ -86,12 +85,10 @@
     text-shadow:0 2px 20px rgba(232,198,107,0.25);
     letter-spacing:1px;
   }
-  .hero .tagline{
-    font-style:italic;color:#d9cdf5;font-size:1.25rem;margin:0 0 18px;
-  }
+  .hero .tagline{font-style:italic;color:#d9cdf5;font-size:1.25rem;margin:0 0 18px;}
   .hero p{color:#e6ddff;max-width:620px;margin:14px auto;}
 
-  /* ---------- SECTION HEADERS ---------- */
+  /* SECTION HEADERS */
   h2.realm-title{
     font-family:'Cinzel', serif;
     font-weight:900;
@@ -104,13 +101,12 @@
   }
   .realm-sub{text-align:center;color:#c9bdec;font-style:italic;margin-top:0;margin-bottom:28px;}
 
-  /* ornamental divider */
   .ornament{
     text-align:center;color:var(--gold);font-size:1.4rem;margin:42px 0;
     text-shadow:0 0 12px rgba(232,198,107,0.5);letter-spacing:8px;
   }
 
-  /* ---------- OFFER CARDS (parchment scrolls) ---------- */
+  /* OFFER CARDS */
   .offer-block{
     position:relative;
     background:linear-gradient(175deg, var(--parchment), #efe2c2);
@@ -140,14 +136,62 @@
   .offer-block small{color:#7a6740;display:block;margin-top:12px;font-size:0.82rem;line-height:1.5;}
   .offer-block code{background:#e5d4a8;padding:2px 8px;border-radius:5px;font-weight:bold;color:#5a3d10;}
 
+  /* FEATURED card — Sapphire */
+  .offer-block.featured{
+    border:2px solid var(--gold);
+    box-shadow:0 0 0 4px rgba(232,198,107,0.18), 0 18px 50px rgba(0,0,0,0.5);
+  }
+  .featured-banner{
+    background:linear-gradient(90deg, var(--gold-deep), var(--gold-bright), var(--gold-deep));
+    color:#2a1f05;
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    font-size:0.9rem;
+    letter-spacing:2px;
+    text-align:center;
+    padding:8px 0;
+    border-radius:10px 10px 0 0;
+    margin:-30px -30px 22px -30px;
+    position:relative;
+    overflow:hidden;
+  }
+  .featured-banner::after{
+    content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
+    background:linear-gradient(110deg,transparent,rgba(255,255,255,0.55),transparent);
+    transform:skewX(-20deg);animation:shimmer 3s infinite;
+  }
+  @keyframes shimmer{0%{left:-120%;}45%,100%{left:160%;}}
+
   .bounty-badge{
     display:inline-block;background:linear-gradient(180deg,#2f6b4f,#1d4a35);
     color:#dffbe9;font-family:'Cinzel',serif;font-weight:700;font-size:0.85rem;
     padding:5px 14px;border-radius:30px;letter-spacing:1px;margin-bottom:6px;
     box-shadow:0 0 14px rgba(63,174,125,0.4);
   }
+  .bounty-badge.purple{
+    background:linear-gradient(180deg,#6b3fae,#4a1d8a);
+    box-shadow:0 0 14px rgba(155,107,214,0.4);
+  }
+  .bounty-badge.teal{
+    background:linear-gradient(180deg,#1d6b8a,#0f3a50);
+    box-shadow:0 0 14px rgba(63,174,200,0.4);
+  }
 
-  /* ---------- BUTTONS ---------- */
+  /* dual-card compare inside Sapphire */
+  .card-compare{
+    display:flex;gap:14px;margin:16px 0;flex-wrap:wrap;
+  }
+  .card-compare .cc{
+    flex:1;min-width:220px;
+    background:linear-gradient(160deg,#fdf6e3,#f0e4c2);
+    border:1px solid #c8a84b;
+    border-radius:12px;
+    padding:16px 18px;
+  }
+  .card-compare .cc h4{margin:0 0 8px;font-size:1rem;color:#5a3d10;}
+  .card-compare .cc ul{margin:0;padding-left:18px;font-size:0.93rem;}
+
+  /* BUTTONS */
   .button{
     display:inline-block;
     position:relative;overflow:hidden;
@@ -169,17 +213,12 @@
     background:linear-gradient(110deg,transparent,rgba(255,255,255,0.75),transparent);
     transform:skewX(-20deg);animation:shimmer 3.5s infinite;
   }
-  @keyframes shimmer{0%{left:-120%;}45%,100%{left:160%;}}
 
-  /* ---------- LINKS ---------- */
   a{color:#7a4bb8;font-weight:600;}
   .offer-block a:not(.button){color:#8a3ba0;}
   a:hover{text-decoration:underline;}
 
-  /* ---------- NAV ---------- */
-  .quick-nav{
-    text-align:center;margin:10px 0 0;
-  }
+  .quick-nav{text-align:center;margin:10px 0 0;}
   .quick-nav a{
     display:inline-block;margin:6px;padding:9px 18px;
     border:1px solid var(--gold);border-radius:30px;
@@ -188,7 +227,6 @@
   }
   .quick-nav a:hover{background:var(--gold);color:#2a1f05;text-decoration:none;box-shadow:0 0 18px rgba(232,198,107,0.5);}
 
-  /* ---------- TABLES ---------- */
   .scroll-table{overflow-x:auto;border-radius:12px;margin:18px 0;}
   table{border-collapse:collapse;width:100%;background:rgba(11,8,32,0.5);}
   th,td{padding:12px 14px;text-align:left;border:1px solid rgba(232,198,107,0.25);}
@@ -201,7 +239,6 @@
   .offer-block th{color:#5a3d10;background:rgba(189,148,54,0.18);}
   .offer-block td{color:var(--ink);}
 
-  /* ---------- INFO PANELS ---------- */
   .panel{
     background:linear-gradient(175deg, rgba(35,26,77,0.85), rgba(11,8,32,0.7));
     border:1px solid rgba(232,198,107,0.3);
@@ -255,6 +292,7 @@
     .hero h1{font-size:1.8rem;}
     body{font-size:17px;}
     .offer-block{padding:24px 20px;}
+    .card-compare{flex-direction:column;}
   }
 </style>
 </head>
@@ -264,7 +302,7 @@
 
 <div class="container">
 
-  <!-- ========== HERO ========== -->
+  <!-- HERO -->
   <header class="hero">
     <div class="crest">⚜️</div>
     <h1>Sajjad's Realm of Riches</h1>
@@ -280,7 +318,7 @@
     </p>
   </header>
 
-  <!-- ========== QUICK NAV ========== -->
+  <!-- QUICK NAV -->
   <nav class="quick-nav">
     <a href="#start">🗺️ Begin Your Quest</a>
     <a href="#credit-cards">💳 Cards of Power</a>
@@ -289,7 +327,7 @@
     <a href="#faq">🔮 Wisdom &amp; FAQ</a>
   </nav>
 
-  <!-- ========== GETTING STARTED (NEW) ========== -->
+  <!-- GETTING STARTED -->
   <section id="start">
     <h2 class="realm-title">🗺️ How to Begin Your Quest</h2>
     <p class="realm-sub">New to this world? Follow the path. It is simpler than it looks.</p>
@@ -309,7 +347,7 @@
 
   <div class="ornament">✦ ❖ ✦ ❖ ✦</div>
 
-  <!-- ========== CREDIT CARDS ========== -->
+  <!-- CREDIT CARDS -->
   <section id="credit-cards">
     <h2 class="realm-title">💳 The Cards of Power</h2>
     <p class="realm-sub">Enchanted cards that reward your every purchase with gold</p>
@@ -367,39 +405,54 @@
       <small>Terms apply. You must not currently hold this card or have received a new cardmember bonus for it in the past 24 months to qualify.</small>
     </div>
 
-    <!-- Chase Sapphire -->
-    <div class="offer-block">
-      <span class="bounty-badge">🏅 60,000 Points (~$750+)</span>
-      <h2>✈️ Chase Sapphire Preferred® or Reserve — The Wanderer's Crown</h2>
-      <p>If far-off lands call to you, the <strong>Chase Sapphire cards</strong> are among the most prized treasures in the realm. A grand sign-up bounty and premium perks for flights, lodging, and feasts.</p>
-      <p>🎁 <strong>Sign-up Bounty:</strong> Earn <strong>60,000 bonus points</strong> after spending $5,000 in the first 3 months. That is worth up to <strong>$750 or more</strong> toward travel.</p>
-      <p><a class="button" href="https://www.referyourchasecard.com/19s/AOOK337IS4" target="_blank">👉 Apply for Chase Sapphire — Get 60,000 Points</a></p>
-      <small>Note: You must not currently have a Sapphire card or have received a Sapphire bonus in the past 48 months. Terms apply. I may earn a referral bonus if you're approved.</small>
-      <h4>💎 Choose Your Sapphire:</h4>
-      <div class="scroll-table">
-        <table>
-          <thead>
-            <tr><th>Feature</th><th>Sapphire Preferred</th><th>Sapphire Reserve</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Sign-Up Bounty</strong></td><td>60,000 points</td><td>60,000 points</td></tr>
-            <tr><td><strong>Annual Fee</strong></td><td>$95</td><td>$550</td></tr>
-            <tr><td><strong>Point Value for Travel</strong></td><td>25% more (1.25x)</td><td>50% more (1.5x)</td></tr>
-            <tr><td><strong>Hotel Credit</strong></td><td>$50/year via Chase Travel</td><td>$300/year on any travel</td></tr>
-            <tr><td><strong>Dining &amp; Travel Points</strong></td><td>3x dining, 2x travel</td><td>3x dining, 3x travel</td></tr>
-            <tr><td><strong>Airport Lounge Access</strong></td><td>—</td><td>✔️</td></tr>
-            <tr><td><strong>Global Entry / TSA PreCheck Credit</strong></td><td>—</td><td>✔️</td></tr>
-          </tbody>
-        </table>
+    <!-- ===== CHASE SAPPHIRE — UPDATED & FEATURED ===== -->
+    <div class="offer-block featured">
+      <div class="featured-banner">⭐ FEATURED QUEST — MOST VALUABLE BOUNTY ⭐</div>
+      <span class="bounty-badge purple">👑 150,000 pts (Reserve) · 75,000 pts (Preferred)</span>
+      <h2>✈️ Chase Sapphire Preferred® or Reserve® — The Wanderer's Crown</h2>
+      <p class="subheading">The most prestigious cards in the realm — chosen by seasoned travelers for their unmatched point value and legendary perks.</p>
+
+      <p>🎁 <strong>Two paths to glory — choose your card:</strong></p>
+      <div class="card-compare">
+        <div class="cc">
+          <h4>👑 Sapphire Reserve®</h4>
+          <ul>
+            <li><strong>150,000 bonus points</strong> after spending $5,000 in the first 3 months</li>
+            <li>Worth <strong>$2,250+</strong> toward travel</li>
+            <li>$300 travel credit each year</li>
+            <li>Airport lounge access worldwide</li>
+            <li>3x points on dining &amp; travel</li>
+            <li>Annual fee: $550 (offset by credits)</li>
+          </ul>
+        </div>
+        <div class="cc">
+          <h4>⚔️ Sapphire Preferred®</h4>
+          <ul>
+            <li><strong>75,000 bonus points</strong> after spending $4,000 in the first 3 months</li>
+            <li>Worth <strong>$937+</strong> toward travel</li>
+            <li>$50 hotel credit via Chase Travel</li>
+            <li>3x on dining, 2x on travel</li>
+            <li>Annual fee: $95</li>
+          </ul>
+        </div>
       </div>
-      <p><strong>🏝️ Why It's a Great Card for Travel:</strong></p>
+
+      <p style="text-align:center;margin-top:6px;">
+        <a class="button" href="https://www.referyourchasecard.com/19w/4WXDR6AS9J" target="_blank">👉 Apply for Chase Sapphire — Claim Your Bounty Now</a>
+      </p>
+
+      <h4>💎 Why Every Traveler Covets This Card:</h4>
       <ul>
-        <li>✈️ Points transfer to travel partners like United, Hyatt, and Southwest</li>
-        <li>🏨 Use the Chase Travel Portal for up to 50% more value</li>
-        <li>💼 Includes purchase protection, travel delay insurance, car rental coverage, and more</li>
+        <li>✈️ Points transfer 1:1 to airlines &amp; hotels — United, Hyatt, Southwest, and more</li>
+        <li>🏨 Redeem through Chase Travel Portal for up to 50% more value</li>
+        <li>💼 Travel delay insurance, purchase protection, and car rental coverage included</li>
+        <li>🔔 <strong>Note:</strong> You must not hold a Sapphire card or have received a Sapphire bonus in the past 48 months to qualify.</li>
       </ul>
-      <p>🔔 <strong>Tip:</strong> Sometimes Chase raises the bounty to 75,000 or even 80,000 points. Apply when the time feels right, or seize the 60,000 while it lasts.</p>
-      <p><a href="https://www.referyourchasecard.com/19s/AOOK337IS4" class="button" target="_blank">🚀 Start Earning Travel Rewards with Chase Sapphire</a></p>
+
+      <p style="text-align:center;">
+        <a class="button" href="https://www.referyourchasecard.com/19w/4WXDR6AS9J" target="_blank">🚀 Start Earning Travel Rewards — Reserve or Preferred</a>
+      </p>
+      <small>I may earn a referral bonus if you're approved for either card. Terms apply. Bonus is awarded per card — choose whichever fits your spending and lifestyle.</small>
     </div>
 
     <!-- Capital One Quicksilver -->
@@ -446,10 +499,42 @@
 
   <div class="ornament">✦ ❖ ✦ ❖ ✦</div>
 
-  <!-- ========== CHECKING ACCOUNTS ========== -->
+  <!-- CHECKING ACCOUNTS -->
   <section id="checking-accounts">
     <h2 class="realm-title">🏦 The Treasure Vaults</h2>
     <p class="realm-sub">Checking accounts that pay you gold just to open their gates</p>
+
+    <!-- Varo — NEW -->
+    <div class="offer-block">
+      <span class="bounty-badge teal">🏅 Bonus Bounty</span>
+      <h2>🟢 Varo Bank — The Nimble Vault (No-Fee, Direct Deposit Bonus)</h2>
+      <p class="subheading">A modern, fully FDIC-insured bank with no hidden fees, no minimums, and a clean mobile experience. Varo rewards you simply for receiving your paycheck.</p>
+      <h3>🎁 How to Claim Your Bonus:</h3>
+      <ol>
+        <li>➡️ Sign up with this link: <a href="https://varomoney.com/r/?r=sajjad14" target="_blank"><strong>Join Varo &amp; Get Your Bonus</strong></a></li>
+        <li>🏦 Open a free Varo Bank Account (subject to approval)</li>
+        <li>💸 Receive a <strong>Qualifying Direct Deposit of at least $500</strong> within <strong>45 days</strong> of opening</li>
+        <li>✅ Both you and I earn a bonus — a true win-win!</li>
+      </ol>
+      <h4>📋 What Counts as a Qualifying Direct Deposit?</h4>
+      <ul>
+        <li>✔️ Paycheck from an employer (electronic / ACH)</li>
+        <li>✔️ Pension or government benefits (e.g. Social Security, Unemployment)</li>
+        <li>❌ <em>Not</em> tax refunds or stimulus payments</li>
+        <li>❌ <em>Not</em> person-to-person transfers (Venmo, Zelle, Varo to Anyone)</li>
+        <li>❌ <em>Not</em> deposits made via a Varo routing number</li>
+      </ul>
+      <h4>🌟 Why Varo?</h4>
+      <ul>
+        <li>🚫 No monthly fees, no minimums, no hidden charges</li>
+        <li>⚡ Get paid up to 2 days early with direct deposit</li>
+        <li>🏦 FDIC-insured through Varo Bank, N.A.</li>
+        <li>📱 Easy, modern mobile app — manage everything from your phone</li>
+        <li>💳 Varo Visa® Debit Card included</li>
+      </ul>
+      <p><a href="https://varomoney.com/r/?r=sajjad14" class="button" target="_blank">👉 Open Your Varo Account &amp; Claim Your Bonus</a></p>
+      <small>Bonus is deposited within 4–7 business days after the qualifying direct deposit is received. Your account must remain open and in good standing when the bonus is paid. Bonus is reported on IRS Form 1099-INT. You must be a new Varo customer (never previously held a Varo Bank or Varo Money account). Terms apply.</small>
+    </div>
 
     <!-- Chime -->
     <div class="offer-block">
@@ -564,7 +649,7 @@
 
   <div class="ornament">✦ ❖ ✦ ❖ ✦</div>
 
-  <!-- ========== BOUNTY BOARD (NEW) ========== -->
+  <!-- BOUNTY BOARD -->
   <section id="bounties">
     <h2 class="realm-title">📜 The Bounty Board</h2>
     <p class="realm-sub">All treasures, gathered in one scroll for the wise planner</p>
@@ -577,9 +662,11 @@
           <tr><td>Discover it®</td><td>Credit Card</td><td>$100</td><td>First purchase in 3 months</td></tr>
           <tr><td>Amazon Prime Visa</td><td>Credit Card</td><td>$150 gift card</td><td>Instant on approval</td></tr>
           <tr><td>Chase Freedom Unlimited®</td><td>Credit Card</td><td>$200</td><td>$500 spend in 3 months</td></tr>
-          <tr><td>Chase Sapphire</td><td>Credit Card</td><td>60,000 pts (~$750+)</td><td>$5,000 spend in 3 months</td></tr>
+          <tr><td>Chase Sapphire Reserve®</td><td>Credit Card</td><td>150,000 pts (~$2,250+)</td><td>$5,000 spend in 3 months</td></tr>
+          <tr><td>Chase Sapphire Preferred®</td><td>Credit Card</td><td>75,000 pts (~$937+)</td><td>$4,000 spend in 3 months</td></tr>
           <tr><td>Capital One Quicksilver</td><td>Credit Card</td><td>$200</td><td>$500 spend in 3 months</td></tr>
           <tr><td>Rakuten</td><td>Cash Back App</td><td>Ongoing cash back</td><td>Shop through the app</td></tr>
+          <tr><td>Varo Bank</td><td>Checking</td><td>Bonus</td><td>$500 direct deposit in 45 days</td></tr>
           <tr><td>Chime</td><td>Checking</td><td>$100</td><td>$200+ direct deposit</td></tr>
           <tr><td>Current</td><td>Checking</td><td>$100</td><td>$200+ direct deposit</td></tr>
           <tr><td>MoneyLion (RoarMoney)</td><td>Checking</td><td>$55</td><td>Two $100+ deposits</td></tr>
@@ -591,7 +678,7 @@
 
   <div class="ornament">✦ ❖ ✦ ❖ ✦</div>
 
-  <!-- ========== FAQ (NEW) ========== -->
+  <!-- FAQ -->
   <section id="faq">
     <h2 class="realm-title">🔮 Wisdom of the Realm</h2>
     <p class="realm-sub">Answers to the questions every traveler asks</p>
@@ -624,7 +711,7 @@
 
   <div class="ornament">✦ ❖ ✦ ❖ ✦</div>
 
-  <!-- ========== GLOSSARY (NEW) ========== -->
+  <!-- GLOSSARY -->
   <section id="glossary">
     <h2 class="realm-title">📖 The Coin-Keeper's Glossary</h2>
     <p class="realm-sub">Common terms, explained in plain words</p>
@@ -652,7 +739,7 @@
     </div>
   </section>
 
-  <!-- ========== DISCLOSURE (NEW, professional) ========== -->
+  <!-- DISCLOSURE -->
   <section id="disclosure">
     <h2 class="realm-title">⚖️ A Fair Word</h2>
     <p class="disclosure">
@@ -662,7 +749,7 @@
     </p>
   </section>
 
-  <!-- ========== FOOTER ========== -->
+  <!-- FOOTER -->
   <div class="footer">
     <span class="crest-small">⚜️</span>
     May your vaults stay full and your quests be fruitful.<br>
@@ -672,7 +759,6 @@
 </div>
 
 <script>
-  // sprinkle twinkling stars across the realm
   (function(){
     var box = document.getElementById('stars');
     if(!box) return;
