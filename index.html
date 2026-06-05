@@ -1,445 +1,694 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome to Saem's Page</title>
-  
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 40px;
-      background: #f0f0f0;
-      color: #333;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 700px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    h1, h2 {
-      color: #2c3e50;
-    }
-    a {
-      color: #3498db;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #28a745;
-      color: white;
-      border-radius: 5px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .footer {
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #888;
-      text-align: center;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>⚜️ Sajjad's Realm of Riches — Treasures, Bounties & Golden Quests</title>
 
-    .offer-divider {
-  margin: 40px 0;
-  border: none;
-  border-top: 2px dashed #ccc;
-  width: 100%;
-}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cinzel+Decorative:wght@700;900&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
-.offer-block {
-  padding: 30px 0;
-  border-bottom: 1px solid #e0e0e0;
-}
+<style>
+  :root{
+    --bg-deep:#0b0820;
+    --bg-mid:#171238;
+    --bg-soft:#231a4d;
+    --gold:#e8c66b;
+    --gold-bright:#ffe6a0;
+    --gold-deep:#bd9436;
+    --parchment:#f6edd6;
+    --parchment-line:#e3d4ad;
+    --ink:#33291a;
+    --ink-soft:#5b4a2e;
+    --emerald:#3fae7d;
+    --amethyst:#9b6bd6;
+    --ruby:#d65a72;
+  }
 
-.offer-block:last-of-type {
-  border-bottom: none;
-}
+  *{box-sizing:border-box;}
 
-    
-  </style>
+  body{
+    margin:0;
+    font-family:'EB Garamond', Georgia, serif;
+    color:#efe7ff;
+    line-height:1.7;
+    font-size:18px;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(155,107,214,0.18), transparent 40%),
+      radial-gradient(circle at 85% 5%, rgba(232,198,107,0.12), transparent 35%),
+      radial-gradient(circle at 50% 100%, rgba(63,174,125,0.10), transparent 45%),
+      linear-gradient(160deg, var(--bg-deep), var(--bg-mid) 55%, var(--bg-soft));
+    background-attachment:fixed;
+    overflow-x:hidden;
+  }
 
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  /* floating star glints */
+  .stars{position:fixed;inset:0;pointer-events:none;z-index:0;}
+  .star{
+    position:absolute;color:var(--gold);opacity:0;
+    animation:twinkle 5s infinite ease-in-out;
+    text-shadow:0 0 8px var(--gold);
+  }
+  @keyframes twinkle{
+    0%,100%{opacity:0;transform:scale(0.6);}
+    50%{opacity:0.9;transform:scale(1.1);}
+  }
 
+  .container{
+    position:relative;z-index:1;
+    max-width:880px;
+    margin:auto;
+    padding:30px 22px 60px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    text-align:center;
+    padding:60px 24px 50px;
+    margin-bottom:30px;
+    border-radius:22px;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(232,198,107,0.20), transparent 60%),
+      linear-gradient(180deg, rgba(35,26,77,0.85), rgba(11,8,32,0.6));
+    border:1px solid rgba(232,198,107,0.35);
+    box-shadow:0 0 60px rgba(155,107,214,0.25), inset 0 0 40px rgba(232,198,107,0.06);
+  }
+  .crest{font-size:3.2rem;filter:drop-shadow(0 0 14px var(--gold));animation:float 4s ease-in-out infinite;}
+  @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+
+  .hero h1{
+    font-family:'Cinzel Decorative', serif;
+    font-size:2.6rem;
+    margin:14px 0 6px;
+    background:linear-gradient(180deg, var(--gold-bright), var(--gold) 55%, var(--gold-deep));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:0 2px 20px rgba(232,198,107,0.25);
+    letter-spacing:1px;
+  }
+  .hero .tagline{
+    font-style:italic;color:#d9cdf5;font-size:1.25rem;margin:0 0 18px;
+  }
+  .hero p{color:#e6ddff;max-width:620px;margin:14px auto;}
+
+  /* ---------- SECTION HEADERS ---------- */
+  h2.realm-title{
+    font-family:'Cinzel', serif;
+    font-weight:900;
+    font-size:1.9rem;
+    text-align:center;
+    margin:60px 0 10px;
+    color:var(--gold-bright);
+    text-shadow:0 0 18px rgba(232,198,107,0.4);
+    letter-spacing:1px;
+  }
+  .realm-sub{text-align:center;color:#c9bdec;font-style:italic;margin-top:0;margin-bottom:28px;}
+
+  /* ornamental divider */
+  .ornament{
+    text-align:center;color:var(--gold);font-size:1.4rem;margin:42px 0;
+    text-shadow:0 0 12px rgba(232,198,107,0.5);letter-spacing:8px;
+  }
+
+  /* ---------- OFFER CARDS (parchment scrolls) ---------- */
+  .offer-block{
+    position:relative;
+    background:linear-gradient(175deg, var(--parchment), #efe2c2);
+    color:var(--ink);
+    border-radius:16px;
+    padding:30px 30px 26px;
+    margin:26px 0;
+    border:1px solid var(--gold-deep);
+    box-shadow:0 14px 40px rgba(0,0,0,0.45), inset 0 0 0 4px rgba(255,255,255,0.35);
+    transition:transform .35s ease, box-shadow .35s ease;
+  }
+  .offer-block::before{
+    content:"";position:absolute;inset:8px;border:1px dashed rgba(189,148,54,0.5);
+    border-radius:11px;pointer-events:none;
+  }
+  .offer-block:hover{
+    transform:translateY(-6px);
+    box-shadow:0 22px 55px rgba(155,107,214,0.4), inset 0 0 0 4px rgba(255,255,255,0.35);
+  }
+  .offer-block h2, .offer-block h3, .offer-block h4{
+    font-family:'Cinzel', serif;color:#5a3d10;margin-top:0.4em;
+  }
+  .offer-block h2{font-size:1.45rem;line-height:1.35;}
+  .offer-block .subheading{font-style:italic;color:var(--ink-soft);}
+  .offer-block ul, .offer-block ol{color:var(--ink);}
+  .offer-block li{margin:5px 0;}
+  .offer-block small{color:#7a6740;display:block;margin-top:12px;font-size:0.82rem;line-height:1.5;}
+  .offer-block code{background:#e5d4a8;padding:2px 8px;border-radius:5px;font-weight:bold;color:#5a3d10;}
+
+  .bounty-badge{
+    display:inline-block;background:linear-gradient(180deg,#2f6b4f,#1d4a35);
+    color:#dffbe9;font-family:'Cinzel',serif;font-weight:700;font-size:0.85rem;
+    padding:5px 14px;border-radius:30px;letter-spacing:1px;margin-bottom:6px;
+    box-shadow:0 0 14px rgba(63,174,125,0.4);
+  }
+
+  /* ---------- BUTTONS ---------- */
+  .button{
+    display:inline-block;
+    position:relative;overflow:hidden;
+    padding:13px 26px;
+    margin:10px 0;
+    background:linear-gradient(180deg, var(--gold-bright), var(--gold) 50%, var(--gold-deep));
+    color:#3a2a05 !important;
+    border-radius:40px;
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    font-size:1rem;
+    text-decoration:none;
+    box-shadow:0 6px 20px rgba(189,148,54,0.55), inset 0 1px 1px rgba(255,255,255,0.6);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .button:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 10px 30px rgba(232,198,107,0.7);text-decoration:none;}
+  .button::after{
+    content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
+    background:linear-gradient(110deg,transparent,rgba(255,255,255,0.75),transparent);
+    transform:skewX(-20deg);animation:shimmer 3.5s infinite;
+  }
+  @keyframes shimmer{0%{left:-120%;}45%,100%{left:160%;}}
+
+  /* ---------- LINKS ---------- */
+  a{color:#7a4bb8;font-weight:600;}
+  .offer-block a:not(.button){color:#8a3ba0;}
+  a:hover{text-decoration:underline;}
+
+  /* ---------- NAV ---------- */
+  .quick-nav{
+    text-align:center;margin:10px 0 0;
+  }
+  .quick-nav a{
+    display:inline-block;margin:6px;padding:9px 18px;
+    border:1px solid var(--gold);border-radius:30px;
+    color:var(--gold-bright);text-decoration:none;font-family:'Cinzel',serif;
+    transition:all .25s ease;
+  }
+  .quick-nav a:hover{background:var(--gold);color:#2a1f05;text-decoration:none;box-shadow:0 0 18px rgba(232,198,107,0.5);}
+
+  /* ---------- TABLES ---------- */
+  .scroll-table{overflow-x:auto;border-radius:12px;margin:18px 0;}
+  table{border-collapse:collapse;width:100%;background:rgba(11,8,32,0.5);}
+  th,td{padding:12px 14px;text-align:left;border:1px solid rgba(232,198,107,0.25);}
+  th{
+    background:linear-gradient(180deg, rgba(232,198,107,0.25), rgba(189,148,54,0.15));
+    font-family:'Cinzel',serif;color:var(--gold-bright);
+  }
+  td{color:#ece4ff;}
+  .offer-block table{background:rgba(90,61,16,0.06);}
+  .offer-block th{color:#5a3d10;background:rgba(189,148,54,0.18);}
+  .offer-block td{color:var(--ink);}
+
+  /* ---------- INFO PANELS ---------- */
+  .panel{
+    background:linear-gradient(175deg, rgba(35,26,77,0.85), rgba(11,8,32,0.7));
+    border:1px solid rgba(232,198,107,0.3);
+    border-radius:16px;padding:26px 28px;margin:22px 0;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  }
+  .panel h3{font-family:'Cinzel',serif;color:var(--gold-bright);margin-top:0;}
+
+  .steps{counter-reset:quest;list-style:none;padding-left:0;}
+  .steps li{
+    position:relative;padding:10px 0 10px 52px;margin:8px 0;
+    border-bottom:1px dashed rgba(232,198,107,0.2);
+  }
+  .steps li::before{
+    counter-increment:quest;content:counter(quest);
+    position:absolute;left:0;top:8px;width:34px;height:34px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(180deg,var(--gold-bright),var(--gold-deep));
+    color:#2a1f05;border-radius:50%;font-family:'Cinzel',serif;font-weight:700;
+    box-shadow:0 0 12px rgba(232,198,107,0.5);
+  }
+
+  details{
+    background:rgba(35,26,77,0.6);border:1px solid rgba(232,198,107,0.25);
+    border-radius:12px;padding:6px 18px;margin:12px 0;transition:border .25s;
+  }
+  details[open]{border-color:var(--gold);}
+  summary{
+    cursor:pointer;font-family:'Cinzel',serif;color:var(--gold-bright);
+    font-size:1.05rem;padding:10px 0;list-style:none;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::before{content:"✦ ";color:var(--gold);}
+  details p{color:#ddd3f5;margin:6px 0 14px;}
+
+  .glossary dt{font-family:'Cinzel',serif;color:var(--gold-bright);margin-top:14px;}
+  .glossary dd{margin:4px 0 0;color:#ddd3f5;}
+
+  .disclosure{
+    font-size:0.9rem;color:#bfb3df;font-style:italic;
+    border-left:3px solid var(--gold);padding:6px 0 6px 18px;margin:18px 0;
+  }
+
+  .footer{
+    margin-top:60px;text-align:center;color:#a99fcf;font-size:0.95rem;
+    padding-top:24px;border-top:1px solid rgba(232,198,107,0.2);
+  }
+  .footer .crest-small{font-size:1.6rem;display:block;margin-bottom:8px;filter:drop-shadow(0 0 10px var(--gold));}
+
+  @media(max-width:560px){
+    .hero h1{font-size:1.8rem;}
+    body{font-size:17px;}
+    .offer-block{padding:24px 20px;}
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>👋 Welcome to My Page</h1>
-<p>
-  I'm Sajjad, and I love sharing tools that help people make smarter financial decisions. 
-  Whether you're building credit, opening your first bank account, or just looking for easy cash bonuses, 
-  you're in the right place.
-</p>
 
-<p>
-  Feel free to explore the curated offers below – each one is handpicked for its value and ease of access. 
-  I’ve also included referral bonuses where available, so we both benefit when you sign up.
-</p>
+<div class="stars" id="stars"></div>
 
+<div class="container">
 
-
-    <!-- 🧭 Optional Navigation -->
-    <p><strong>Jump to:</strong> 
-      <a href="#credit-cards">💳 Credit Cards</a> | 
-      <a href="#checking-accounts">🏦 Checking Accounts</a>
+  <!-- ========== HERO ========== -->
+  <header class="hero">
+    <div class="crest">⚜️</div>
+    <h1>Sajjad's Realm of Riches</h1>
+    <p class="tagline">A traveler's guide to treasures, bounties &amp; golden quests</p>
+    <p>
+      Greetings, brave seeker of fortune. I am <strong>Sajjad</strong>, your guide through this enchanted realm.
+      Here you will find a hand-picked collection of treasures — credit cards forged with rewards,
+      and vaults that pay you simply for opening their gates.
     </p>
+    <p>
+      Every quest below has been chosen for its true value and easy passage.
+      Where a referral bonus exists, both of us are rewarded when you join. A fair trade among allies.
+    </p>
+  </header>
 
-    <!-- 💳 CREDIT CARDS SECTION -->
-    <section id="credit-cards">
-      <h2>💳 Credit Cards with Sign-Up Bonuses</h2>
+  <!-- ========== QUICK NAV ========== -->
+  <nav class="quick-nav">
+    <a href="#start">🗺️ Begin Your Quest</a>
+    <a href="#credit-cards">💳 Cards of Power</a>
+    <a href="#checking-accounts">🏦 Treasure Vaults</a>
+    <a href="#bounties">📜 Bounty Board</a>
+    <a href="#faq">🔮 Wisdom &amp; FAQ</a>
+  </nav>
 
-      <div class="offer-block">
-
-      <h2>🔐 Start Building Credit with the Discover it® Card</h2>
-    <p class="subheading">If you're new to the world of credit cards, Discover® is a fantastic place to start. No annual fees, great cashback, and an easy app experience.</p>
-    <p>As a bonus, you'll get <strong>$100 free</strong> just for signing up and making your first purchase within 3 months!</p>
-    
-    <p><a class="button" href="https://refer.discover.com/s/emdadi0" target="_blank">👉 Get Your First Card – $100 Bonus</a></p>
-    
-    <p><small>Note: You'll receive a $100 statement credit, and so will I. Win-win! Offer valid for new Discover customers. Terms apply.</small></p>
-
-  </div>
-        <div class="offer-block">
-
-      <h2>🛍️ Amazon Prime Visa – Best Starter Card with Chase</h2>
-<p>If you're planning to build a strong relationship with <strong>Chase</strong> and you're already shopping on Amazon, this is a great place to begin.</p>
-
-<p>By starting with the <strong>Amazon Prime Visa</strong>, you can earn up to <strong>5% cashback</strong> at Amazon and Whole Foods, while also opening the door to other top Chase cards later on like the Sapphire Preferred or Freedom Unlimited.</p>
-
-<p>🔥 <strong>Bonus:</strong> Get a <strong>$150 Amazon Gift Card instantly</strong> upon approval — no spending required!</p>
-
-<p><a class="button" href="https://www.amazon.com/dp/BT00LN946S?externalReferenceId=80e86926-03d1-4938-a49d-0168032f82c0" target="_blank">👉 Apply for Amazon Prime Visa – $150 Instant Bonus</a></p>
-
-<h4>💡 Why It’s a Smart Start:</h4>
-<ul>
-  <li>🏦 Issued by Chase – builds your Chase banking/credit profile</li>
-  <li>💳 No annual fee (with Prime membership)</li>
-  <li>🛒 5% back at Amazon.com & Whole Foods with Prime</li>
-  <li>🍔 2% back at restaurants, gas stations, and transit</li>
-  <li>🌍 1% back everywhere else (no foreign transaction fees)</li>
-  <li>💰 Redeem points at Amazon checkout, or as cashback</li>
-  <li>🧾 Bonus protections: extended warranty, purchase protection, and travel insurance</li>
-</ul>
-
-<p><strong>Tip:</strong> After a few months of using this responsibly, you may qualify for other top Chase cards with even more perks.</p>
-
-<p><small>Offered through Chase Bank. You must have an Amazon Prime membership to qualify for the 5% benefits. Terms apply.</small></p>
-
-  </div>
-        <div class="offer-block">
-
-      <h2>💸 Chase Freedom Unlimited® – A Top Everyday Cash Back Card</h2>
-<p>Looking for a flexible credit card with great rewards and no annual fee? The <strong>Chase Freedom Unlimited®</strong> is one of the best all-around cards for everyday spending.</p>
-
-<p>🎁 <strong>Bonus:</strong> Earn <strong>$200 cash back</strong> after spending just $500 in the first 3 months.</p>
-
-<p><a class="button" href="https://www.referyourchasecard.com/18A/GXPISLI2P7" target="_blank">👉 Apply Now – Get $200 Bonus</a></p>
-
-<h4>🔑 Highlights:</h4>
-<ul>
-  <li>💳 <strong>No annual fee</strong></li>
-  <li>🍽️ 3% back on dining (including takeout and delivery)</li>
-  <li>🏥 3% back at drugstores</li>
-  <li>✈️ 5% back on travel booked through Chase Travel</li>
-  <li>💰 <strong>1.5% back on all other purchases</strong> – no limits</li>
-  <li>🕒 0% intro APR on purchases and balance transfers for 15 months</li>
-  <li>🔒 Cash back rewards never expire as long as your account is open</li>
-</ul>
-
-<p>💡 <strong>Why It’s Great:</strong> This card earns strong rewards on everyday spending and is perfect for those who want simple, reliable cashback with no rotating categories or hassle.</p>
-
-<p><small>Terms apply. You must not currently hold this card or have received a new cardmember bonus for it in the past 24 months to qualify.</small></p>
-
-  </div>
-        <div class="offer-block">
-          
- <h2>✈️ Chase Sapphire Preferred® or Reserve – Earn 60,000 Bonus Points</h2>
-<p>If you're planning to travel, <strong>Chase Sapphire cards</strong> are among the best. You'll earn a huge sign-up bonus and get premium benefits for flights, hotels, dining, and more.</p>
-
-<p>🎁 <strong>Sign-up Bonus:</strong> Earn <strong>60,000 bonus points</strong> after spending $5,000 in the first 3 months. That’s worth up to <strong>$750 or more</strong> toward travel!</p>
-
-<p><a class="button" href="https://www.referyourchasecard.com/19s/AOOK337IS4" target="_blank">👉 Apply for Chase Sapphire – Get 60,000 Points</a></p>
-
-<p><small>Note: You must not currently have a Sapphire card or have received a Sapphire bonus in the past 48 months. Terms apply. I may earn a referral bonus if you're approved.</small></p>
-
-<h4>💎 Choose Your Sapphire:</h4>
-<table border="1" cellpadding="8" style="border-collapse: collapse; width:100%; max-width: 100%;">
-  <thead>
-    <tr>
-      <th>Feature</th>
-      <th>Sapphire Preferred</th>
-      <th>Sapphire Reserve</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Sign-Up Bonus</strong></td>
-      <td>60,000 points</td>
-      <td>60,000 points</td>
-    </tr>
-    <tr>
-      <td><strong>Annual Fee</strong></td>
-      <td>$95</td>
-      <td>$550</td>
-    </tr>
-    <tr>
-      <td><strong>Point Value for Travel</strong></td>
-      <td>25% more (1.25x)</td>
-      <td>50% more (1.5x)</td>
-    </tr>
-    <tr>
-      <td><strong>Hotel Credit</strong></td>
-      <td>$50/year via Chase Travel</td>
-      <td>$300/year on any travel</td>
-    </tr>
-    <tr>
-      <td><strong>Dining & Travel Points</strong></td>
-      <td>3x on dining, 2x on travel</td>
-      <td>3x on dining, 3x on travel</td>
-    </tr>
-    <tr>
-      <td><strong>Airport Lounge Access</strong></td>
-      <td>—</td>
-      <td>✔️</td>
-    </tr>
-    <tr>
-      <td><strong>Global Entry / TSA PreCheck Credit</strong></td>
-      <td>—</td>
-      <td>✔️</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>🏝️ Why It’s a Great Card for Travel:</strong></p>
-<ul>
-  <li>✈️ Points can be transferred to travel partners like United, Hyatt, and Southwest</li>
-  <li>🏨 Use through Chase Travel Portal for up to 50% more value</li>
-  <li>💼 Includes purchase protection, travel delay insurance, car rental coverage, and more</li>
-</ul>
-
-<p>🔔 <strong>Tip:</strong> Sometimes Chase increases the bonus to 75,000 or even 80,000 points — so apply when the time feels right, or grab the 60,000 while it’s active!</p>
-
-<p><a href="https://www.referyourchasecard.com/19s/AOOK337IS4" class="button" target="_blank">🚀 Start Earning Travel Rewards with Chase Sapphire</a></p>
-     
+  <!-- ========== GETTING STARTED (NEW) ========== -->
+  <section id="start">
+    <h2 class="realm-title">🗺️ How to Begin Your Quest</h2>
+    <p class="realm-sub">New to this world? Follow the path. It is simpler than it looks.</p>
+    <div class="panel">
+      <ol class="steps">
+        <li><strong>Pick one treasure.</strong> Do not rush. Choose the offer that fits your real needs.</li>
+        <li><strong>Open the gate.</strong> Tap its golden button to begin signing up through the link.</li>
+        <li><strong>Meet the simple terms.</strong> Most ask for a first purchase or a direct deposit.</li>
+        <li><strong>Claim your reward.</strong> The bonus arrives once the terms are met. Patience, traveler.</li>
+      </ol>
+      <p style="margin-bottom:0;color:#ddd3f5;">
+        💡 <strong>A word of wisdom:</strong> Apply only for what you will truly use.
+        Open one quest at a time so your credit stays strong and healthy.
+      </p>
     </div>
-        <div class="offer-block">    
-      
- <h2>💳 Capital One Quicksilver – Easy, Unlimited 1.5% Cash Back</h2>
-      <p>Looking for a straightforward, reliable cash-back credit card with zero annual fee and a great intro APR? The <strong>Capital One Quicksilver</strong> card is one of the best all-around options — ideal for beginners and pros alike.</p> 
-      <p>🪙 <strong>Earn 1.5% cash back</strong> on everything, every day — no rotating categories, no limits.</p> 
-      <p>🎁 <strong>Welcome Bonus:</strong> Get <strong>$200 cash</strong> after spending just $500 in the first 3 months.</p> 
-      <p>🛡️ <strong>0% Intro APR:</strong> Enjoy 15 months of 0% interest on purchases and balance transfers.</p> 
-      <p>💸 <strong>Annual Fee:</strong> $0 — keep more of your rewards.</p> 
-      <p><a href="https://i.capitalone.com/J5D1oXlEG" class="button" target="_blank">👉 Apply Now – Capital One Quicksilver</a></p> 
-      <h4>🌟 Why It’s Great:</h4> 
-      <ul> 
-        <li>✅ Unlimited 1.5% cash back on all purchases</li> 
-        <li>✅ $200 bonus with a low $500 spend requirement</li> 
-        <li>✅ 0% intro APR for 15 months – great for big purchases or transfers</li> 
-        <li>✅ No annual fee and no foreign transaction fees</li> 
-        <li>✅ Built-in security, mobile app, and fraud protection from Capital One</li> 
-      </ul> 
-      <p><strong>🔎 Pre-Approval Available:</strong> You can check if you’re pre-approved with <em>no impact</em> to your credit score before you apply.</p> 
-      <p><small>Note: To be eligible, you must not have received a bonus for this card in the last 48 months. I may earn a bonus if you're approved. Terms apply.</small></p>     
-      
-      
-     </div>
-      
+  </section>
 
+  <div class="ornament">✦ ❖ ✦ ❖ ✦</div>
 
+  <!-- ========== CREDIT CARDS ========== -->
+  <section id="credit-cards">
+    <h2 class="realm-title">💳 The Cards of Power</h2>
+    <p class="realm-sub">Enchanted cards that reward your every purchase with gold</p>
 
-      <div class="offer-block">
-  <h2>🛍️ Save More with Rakuten – Get Paid to Shop Online</h2>
-  <p><strong>Want free money just for shopping online?</strong> Rakuten makes it easy to earn <strong>Cash Back</strong> at over 3,500 stores — including Target, Macy’s, Best Buy, and more.</p>
-  
-  <p>💸 <strong>Sign up today using my referral link:</strong> <a href="https://www.rakuten.com/r/EMDADI3?eeid=45830" target="_blank">👉 Join Rakuten & Start Earning</a></p>
+    <!-- Discover -->
+    <div class="offer-block">
+      <span class="bounty-badge">🏅 $100 Bounty</span>
+      <h2>🔐 The Discover it® Card — A Hero's First Blade</h2>
+      <p class="subheading">New to the world of credit? The Discover® card is a fantastic place to begin your journey. No annual fees, generous cashback, and a smooth, easy app.</p>
+      <p>As a reward, you will earn <strong>$100 of pure gold</strong> just for signing up and making your first purchase within 3 months.</p>
+      <p><a class="button" href="https://refer.discover.com/s/emdadi0" target="_blank">👉 Claim Your First Card — $100 Bounty</a></p>
+      <small>Note: You'll receive a $100 statement credit, and so will I. A true win-win. Offer valid for new Discover customers. Terms apply.</small>
+    </div>
 
-  <p>Once you're in, you’ll unlock:</p>
-  <ul>
-    <li>💵 Easy Cash Back when you shop at top stores</li>
-    <li>🎯 Automatic coupons applied at checkout</li>
-    <li>🔔 Real-time alerts when better deals are available</li>
-    <li>💳 Special promos just for using certain credit cards</li>
-    <li>🏦 Extra savings when stacking with bank offers</li>
-  </ul>
+    <!-- Amazon Prime Visa -->
+    <div class="offer-block">
+      <span class="bounty-badge">🏅 $150 Instant Bounty</span>
+      <h2>🛍️ Amazon Prime Visa — The Merchant's Favored Card</h2>
+      <p>If you wish to build a strong alliance with the <strong>House of Chase</strong>, and you already shop the great markets of Amazon, this is a fine place to begin.</p>
+      <p>The <strong>Amazon Prime Visa</strong> earns up to <strong>5% cashback</strong> at Amazon and Whole Foods. It also opens the door to other mighty Chase cards later, such as the Sapphire Preferred or Freedom Unlimited.</p>
+      <p>🔥 <strong>Bounty:</strong> Receive a <strong>$150 Amazon Gift Card instantly</strong> upon approval — no spending required.</p>
+      <p><a class="button" href="https://www.amazon.com/dp/BT00LN946S?externalReferenceId=80e86926-03d1-4938-a49d-0168032f82c0" target="_blank">👉 Apply for Amazon Prime Visa — $150 Instant Bounty</a></p>
+      <h4>💡 Why It's a Smart Start:</h4>
+      <ul>
+        <li>🏦 Issued by Chase — builds your Chase banking and credit standing</li>
+        <li>💳 No annual fee (with Prime membership)</li>
+        <li>🛒 5% back at Amazon.com &amp; Whole Foods with Prime</li>
+        <li>🍔 2% back at restaurants, gas stations, and transit</li>
+        <li>🌍 1% back everywhere else (no foreign transaction fees)</li>
+        <li>💰 Redeem points at Amazon checkout, or as cashback</li>
+        <li>🧾 Bonus protections: extended warranty, purchase protection, and travel insurance</li>
+      </ul>
+      <p><strong>Tip:</strong> After a few moons of using this card wisely, you may qualify for other top Chase cards with even greater perks.</p>
+      <small>Offered through Chase Bank. You must have an Amazon Prime membership to qualify for the 5% benefits. Terms apply.</small>
+    </div>
 
-  <p><strong>Tip:</strong> Add the <strong>Rakuten Browser Extension</strong> to never miss a deal. It auto-applies coupons and activates Cash Back in one click.</p>
+    <!-- Chase Freedom Unlimited -->
+    <div class="offer-block">
+      <span class="bounty-badge">🏅 $200 Bounty</span>
+      <h2>💸 Chase Freedom Unlimited® — The Everyday Champion</h2>
+      <p>Seeking a flexible card with great rewards and no annual fee? The <strong>Chase Freedom Unlimited®</strong> is one of the finest all-around cards for daily spending.</p>
+      <p>🎁 <strong>Bounty:</strong> Earn <strong>$200 cash back</strong> after spending just $500 in the first 3 months.</p>
+      <p><a class="button" href="https://www.referyourchasecard.com/18A/GXPISLI2P7" target="_blank">👉 Apply Now — Get $200 Bounty</a></p>
+      <h4>🔑 Highlights:</h4>
+      <ul>
+        <li>💳 <strong>No annual fee</strong></li>
+        <li>🍽️ 3% back on dining (including takeout and delivery)</li>
+        <li>🏥 3% back at drugstores</li>
+        <li>✈️ 5% back on travel booked through Chase Travel</li>
+        <li>💰 <strong>1.5% back on all other purchases</strong> — no limits</li>
+        <li>🕒 0% intro APR on purchases and balance transfers for 15 months</li>
+        <li>🔒 Cash back never expires while your account stays open</li>
+      </ul>
+      <p>💡 <strong>Why It's Great:</strong> Strong rewards on everyday spending, with simple, reliable cashback and no rotating categories.</p>
+      <small>Terms apply. You must not currently hold this card or have received a new cardmember bonus for it in the past 24 months to qualify.</small>
+    </div>
 
-  <p><a href="https://www.rakuten.com/button.htm" target="_blank" class="button">🔌 Install the Rakuten Extension</a></p>
+    <!-- Chase Sapphire -->
+    <div class="offer-block">
+      <span class="bounty-badge">🏅 60,000 Points (~$750+)</span>
+      <h2>✈️ Chase Sapphire Preferred® or Reserve — The Wanderer's Crown</h2>
+      <p>If far-off lands call to you, the <strong>Chase Sapphire cards</strong> are among the most prized treasures in the realm. A grand sign-up bounty and premium perks for flights, lodging, and feasts.</p>
+      <p>🎁 <strong>Sign-up Bounty:</strong> Earn <strong>60,000 bonus points</strong> after spending $5,000 in the first 3 months. That is worth up to <strong>$750 or more</strong> toward travel.</p>
+      <p><a class="button" href="https://www.referyourchasecard.com/19s/AOOK337IS4" target="_blank">👉 Apply for Chase Sapphire — Get 60,000 Points</a></p>
+      <small>Note: You must not currently have a Sapphire card or have received a Sapphire bonus in the past 48 months. Terms apply. I may earn a referral bonus if you're approved.</small>
+      <h4>💎 Choose Your Sapphire:</h4>
+      <div class="scroll-table">
+        <table>
+          <thead>
+            <tr><th>Feature</th><th>Sapphire Preferred</th><th>Sapphire Reserve</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Sign-Up Bounty</strong></td><td>60,000 points</td><td>60,000 points</td></tr>
+            <tr><td><strong>Annual Fee</strong></td><td>$95</td><td>$550</td></tr>
+            <tr><td><strong>Point Value for Travel</strong></td><td>25% more (1.25x)</td><td>50% more (1.5x)</td></tr>
+            <tr><td><strong>Hotel Credit</strong></td><td>$50/year via Chase Travel</td><td>$300/year on any travel</td></tr>
+            <tr><td><strong>Dining &amp; Travel Points</strong></td><td>3x dining, 2x travel</td><td>3x dining, 3x travel</td></tr>
+            <tr><td><strong>Airport Lounge Access</strong></td><td>—</td><td>✔️</td></tr>
+            <tr><td><strong>Global Entry / TSA PreCheck Credit</strong></td><td>—</td><td>✔️</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>🏝️ Why It's a Great Card for Travel:</strong></p>
+      <ul>
+        <li>✈️ Points transfer to travel partners like United, Hyatt, and Southwest</li>
+        <li>🏨 Use the Chase Travel Portal for up to 50% more value</li>
+        <li>💼 Includes purchase protection, travel delay insurance, car rental coverage, and more</li>
+      </ul>
+      <p>🔔 <strong>Tip:</strong> Sometimes Chase raises the bounty to 75,000 or even 80,000 points. Apply when the time feels right, or seize the 60,000 while it lasts.</p>
+      <p><a href="https://www.referyourchasecard.com/19s/AOOK337IS4" class="button" target="_blank">🚀 Start Earning Travel Rewards with Chase Sapphire</a></p>
+    </div>
 
-  <p><small>Payments are made quarterly via PayPal or check. Rakuten partners with thousands of retailers who pay them to send shoppers — and they share that with you!</small></p>
+    <!-- Capital One Quicksilver -->
+    <div class="offer-block">
+      <span class="bounty-badge">🏅 $200 Bounty</span>
+      <h2>💳 Capital One Quicksilver — The Steady Coin-Bearer</h2>
+      <p>Want a simple, reliable cash-back card with no annual fee and a great intro APR? The <strong>Capital One Quicksilver</strong> is one of the best all-around choices — perfect for newcomers and veterans alike.</p>
+      <p>🪙 <strong>Earn 1.5% cash back</strong> on everything, every day — no rotating categories, no limits.</p>
+      <p>🎁 <strong>Welcome Bounty:</strong> Get <strong>$200 cash</strong> after spending just $500 in the first 3 months.</p>
+      <p>🛡️ <strong>0% Intro APR:</strong> Enjoy 15 months of 0% interest on purchases and balance transfers.</p>
+      <p>💸 <strong>Annual Fee:</strong> $0 — keep more of your treasure.</p>
+      <p><a href="https://i.capitalone.com/J5D1oXlEG" class="button" target="_blank">👉 Apply Now — Capital One Quicksilver</a></p>
+      <h4>🌟 Why It's Great:</h4>
+      <ul>
+        <li>✅ Unlimited 1.5% cash back on all purchases</li>
+        <li>✅ $200 bounty with a low $500 spend requirement</li>
+        <li>✅ 0% intro APR for 15 months — great for big purchases or transfers</li>
+        <li>✅ No annual fee and no foreign transaction fees</li>
+        <li>✅ Built-in security, mobile app, and fraud protection from Capital One</li>
+      </ul>
+      <p><strong>🔎 Pre-Approval Available:</strong> Check if you're pre-approved with <em>no impact</em> to your credit score before you apply.</p>
+      <small>Note: To be eligible, you must not have received a bonus for this card in the last 48 months. I may earn a bonus if you're approved. Terms apply.</small>
+    </div>
+
+    <!-- Rakuten -->
+    <div class="offer-block">
+      <span class="bounty-badge">🪙 Cash Back on Every Shop</span>
+      <h2>🛍️ Rakuten — The Merchant's Hidden Tithe</h2>
+      <p><strong>Want free gold simply for shopping online?</strong> Rakuten makes it easy to earn <strong>Cash Back</strong> at over 3,500 stores — including Target, Macy's, Best Buy, and more.</p>
+      <p>💸 <strong>Join through my referral link:</strong> <a href="https://www.rakuten.com/r/EMDADI3?eeid=45830" target="_blank">👉 Join Rakuten &amp; Start Earning</a></p>
+      <p>Once you are in, you unlock:</p>
+      <ul>
+        <li>💵 Easy Cash Back when you shop at top stores</li>
+        <li>🎯 Automatic coupons applied at checkout</li>
+        <li>🔔 Real-time alerts when better deals appear</li>
+        <li>💳 Special promos for using certain credit cards</li>
+        <li>🏦 Extra savings when stacking with bank offers</li>
+      </ul>
+      <p><strong>Tip:</strong> Add the <strong>Rakuten Browser Extension</strong> to never miss a deal. It auto-applies coupons and activates Cash Back in one click.</p>
+      <p><a href="https://www.rakuten.com/button.htm" target="_blank" class="button">🔌 Install the Rakuten Extension</a></p>
+      <small>Payments are made quarterly via PayPal or check. Rakuten partners with thousands of retailers who pay them to send shoppers — and they share that gold with you.</small>
+    </div>
+  </section>
+
+  <div class="ornament">✦ ❖ ✦ ❖ ✦</div>
+
+  <!-- ========== CHECKING ACCOUNTS ========== -->
+  <section id="checking-accounts">
+    <h2 class="realm-title">🏦 The Treasure Vaults</h2>
+    <p class="realm-sub">Checking accounts that pay you gold just to open their gates</p>
+
+    <!-- Chime -->
+    <div class="offer-block">
+      <span class="bounty-badge">🏅 $100 Bounty</span>
+      <h2>💵 Chime — The Open Gate (No-Fee Vault)</h2>
+      <p>Seeking a modern, hassle-free vault? <strong>Chime</strong> is one of the easiest to open — no fees, no minimums, and a swift sign-up. Perfect for students, freelancers, or any fresh adventurer.</p>
+      <p>🎁 <strong>Bounty: Get $100</strong> just for joining and setting up a direct deposit.</p>
+      <h3>🟢 How to Claim Your $100 Bounty:</h3>
+      <ul>
+        <li>➡️ Sign up with this link: <a href="https://chime.com/r/sajjademdadimahdimahalleh?c=s" target="_blank"><strong>Join Chime &amp; Get $100</strong></a></li>
+        <li>🧾 Open a free Chime Checking Account</li>
+        <li>🏦 Receive a qualifying direct deposit of $200+ within 45 days</li>
+        <li>💳 Activate your Chime Visa® Debit Card within 14 days of the deposit</li>
+      </ul>
+      <p>✅ Once done, both of us receive <strong>$100</strong> — a true win-win.</p>
+      <h4>🌟 Why Chime?</h4>
+      <ul>
+        <li>🚫 No monthly fees, overdraft fees, or minimum balances</li>
+        <li>💰 Get paid up to 2 days early</li>
+        <li>📈 Build credit history with no annual fees</li>
+        <li>🛡️ Fee-free overdraft up to $200 with SpotMe*</li>
+        <li>⚡ Access up to $500 of your pay before payday</li>
+      </ul>
+      <p><a href="https://chime.com/r/sajjademdadimahdimahalleh?c=s" class="button" target="_blank">👉 Claim Your $100 Now</a></p>
+      <small>Terms apply. Bonus is typically delivered within 2 business days after requirements are met. A qualifying direct deposit is $200+ from an employer, gig, or benefits — not PayPal/Venmo transfers.</small>
+    </div>
+
+    <!-- Current -->
+    <div class="offer-block">
+      <span class="bounty-badge">🏅 $100 Bounty</span>
+      <h2>💳 Current — Build Your Credit Without Debt</h2>
+      <p>Current offers a modern checking vault with a unique <strong>Build Card</strong> that works <strong>like a secured credit card</strong> — but with no hard credit check. Use your own gold, build credit safely, and raise your score with wise use.</p>
+      <h3>🎁 Get $100 When You Join</h3>
+      <p>Open a Current account and receive a qualifying direct deposit of $200 or more to earn your $100 bounty. Use the link or code below:</p>
+      <ul>
+        <li>🔗 <strong>Referral Link:</strong> <a href="https://current.com/get-started/?creator_code=CWEVEU856&impression_id=b153fd79-23e5-4250-9038-e00bd11ec99d" target="_blank">Join Current &amp; Get $100</a></li>
+        <li>💬 <strong>Referral Code:</strong> <code>CWEVEU856</code></li>
+      </ul>
+      <h3>🌟 Key Benefits</h3>
+      <ul>
+        <li>📈 <strong>Build credit</strong> with the secured Build Card — no credit history or hard inquiry needed</li>
+        <li>💳 Uses your own money — functions like a debit card, reports like a credit card</li>
+        <li>📊 Reports to major credit bureaus — can help raise your score</li>
+        <li>⚡ <strong>Get paid up to 2 days early</strong> with direct deposit</li>
+        <li>💸 Access up to <strong>$750</strong> with Paycheck Advance</li>
+        <li>🏦 <strong>Fee-free overdraft</strong> (with qualifying direct deposit)</li>
+        <li>💰 Earn up to <strong>4.00% APY</strong> on savings</li>
+        <li>🎯 Earn reward points at restaurants and grocery stores</li>
+      </ul>
+      <h4>🧠 Important Note</h4>
+      <p>While this is not a traditional credit card, Build Card activity is reported to credit bureaus and can affect your score. <strong>No hard credit check</strong> is required to apply.</p>
+      <p><a class="button" href="https://current.com/get-started/?creator_code=CWEVEU856&impression_id=b153fd79-23e5-4250-9038-e00bd11ec99d" target="_blank">👉 Join Current &amp; Claim Your $100 Bounty</a></p>
+      <small>Terms apply. $200+ direct deposit required to qualify. Bonus is typically paid within a few business days of meeting eligibility. No credit check required. Subject to approval.</small>
+    </div>
+
+    <!-- MoneyLion -->
+    <div class="offer-block">
+      <span class="bounty-badge">🏅 $55 Bounty</span>
+      <h2>🦁 MoneyLion — The Lion's Share (RoarMoney Checking)</h2>
+      <p><strong>MoneyLion</strong> is a financial technology company offering FDIC-insured digital banking. Its flagship vault, <strong>RoarMoney</strong>, is packed with features:</p>
+      <ul>
+        <li>💰 <strong>Early Paycheck:</strong> Get paid up to 2 days early</li>
+        <li>🚫 <strong>No Hidden Fees:</strong> Transparent pricing, no surprises</li>
+        <li>🎁 <strong>Debit Card Rewards:</strong> Earn on purchases of $10+ with Shake 'N' Bank — win up to 5x the purchase, up to $500/day</li>
+      </ul>
+      <h3>🎉 How to Get Your $55 Bounty:</h3>
+      <ol>
+        <li>📝 Open a RoarMoney account using <strong><a href="https://mlion.us/$MercifulSajjad569" target="_blank">this referral link</a></strong></li>
+        <li>🏦 Make direct deposits of at least $100, twice, within 60 days</li>
+        <li>💸 Receive your $55: $5 after signing up, $50 after deposits</li>
+      </ol>
+      <p><a class="button" href="https://mlion.us/$MercifulSajjad569" target="_blank">👉 Open RoarMoney &amp; Get $55</a></p>
+      <h4>✅ Bounty Details:</h4>
+      <ul>
+        <li>🗺️ Available nationwide</li>
+        <li>💳 No early account closure fee</li>
+        <li>🔍 Soft pull on credit (no hard inquiry)</li>
+        <li>⏱️ Bonuses can take up to 2 weeks after qualifying actions</li>
+      </ul>
+      <small>This promotion is available indefinitely, but terms can change anytime. Direct deposit must be from an employer, government, or payroll provider.</small>
+    </div>
+
+    <!-- Citi -->
+    <div class="offer-block">
+      <span class="bounty-badge">🏅 Up to $1,500 Bounty</span>
+      <h2>🏰 Citi® Checking — The Royal Treasury (Choose Your Bounty)</h2>
+      <p>Open a new eligible Citi® Checking Account and earn a generous cash bounty just by meeting simple deposit terms.</p>
+      <p><strong>Bounties range from $325 to $1,500 — here's how:</strong></p>
+      <ul>
+        <li><strong>💵 Earn $325:</strong> Make at least 2 Enhanced Direct Deposits (ACH transfers like paychecks, Venmo, Zelle®, PayPal, Social Security) totaling $3,000 within 90 days.</li>
+        <li><strong>💸 Earn $750:</strong> Deposit and keep $30,000–$199,999 in new funds for 90 days.</li>
+        <li><strong>💰 Earn $1,500:</strong> Deposit and keep $200,000+ in new funds for 90 days.</li>
+      </ul>
+      <p><strong>Enhanced Direct Deposits (EDD)</strong> include:</p>
+      <ul>
+        <li>Recurring payroll or pension payments</li>
+        <li>ACH deposits from apps like Zelle®, PayPal, Venmo</li>
+        <li>Government benefits and Social Security</li>
+      </ul>
+      <p><a class="button" href="https://banking.citi.com/cbol/OM/checking/choice/featured-offers/default.htm?flowID=MGM&venue=mgm&mgmrefid=1095915098" target="_blank">👉 Open Your Citi Account &amp; Choose a Bounty</a></p>
+      <h3>🔒 Eligibility &amp; Notes:</h3>
+      <ul>
+        <li>✔️ Must be 18+ and a U.S. citizen or resident</li>
+        <li>✔️ No Citi® Checking account in the last 365 days</li>
+        <li>✔️ Bonuses are paid within 30 days after qualifying</li>
+        <li>✔️ Subject to approval and tax reporting (1099-INT)</li>
+      </ul>
+      <p>💡 <strong>Bounty Tip:</strong> Join using <em>my referral link</em> and I'll also earn a referral reward. Once open, you can refer others too and earn up to <strong>$2,000</strong> in referral rewards.</p>
+      <small>Terms apply. Please confirm current offer dates and details on Citi's official site, as bank promotions change often.</small>
+    </div>
+  </section>
+
+  <div class="ornament">✦ ❖ ✦ ❖ ✦</div>
+
+  <!-- ========== BOUNTY BOARD (NEW) ========== -->
+  <section id="bounties">
+    <h2 class="realm-title">📜 The Bounty Board</h2>
+    <p class="realm-sub">All treasures, gathered in one scroll for the wise planner</p>
+    <div class="scroll-table">
+      <table>
+        <thead>
+          <tr><th>Treasure</th><th>Type</th><th>Bounty</th><th>Main Requirement</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Discover it®</td><td>Credit Card</td><td>$100</td><td>First purchase in 3 months</td></tr>
+          <tr><td>Amazon Prime Visa</td><td>Credit Card</td><td>$150 gift card</td><td>Instant on approval</td></tr>
+          <tr><td>Chase Freedom Unlimited®</td><td>Credit Card</td><td>$200</td><td>$500 spend in 3 months</td></tr>
+          <tr><td>Chase Sapphire</td><td>Credit Card</td><td>60,000 pts (~$750+)</td><td>$5,000 spend in 3 months</td></tr>
+          <tr><td>Capital One Quicksilver</td><td>Credit Card</td><td>$200</td><td>$500 spend in 3 months</td></tr>
+          <tr><td>Rakuten</td><td>Cash Back App</td><td>Ongoing cash back</td><td>Shop through the app</td></tr>
+          <tr><td>Chime</td><td>Checking</td><td>$100</td><td>$200+ direct deposit</td></tr>
+          <tr><td>Current</td><td>Checking</td><td>$100</td><td>$200+ direct deposit</td></tr>
+          <tr><td>MoneyLion (RoarMoney)</td><td>Checking</td><td>$55</td><td>Two $100+ deposits</td></tr>
+          <tr><td>Citi® Checking</td><td>Checking</td><td>$325 – $1,500</td><td>Deposits over 90 days</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="ornament">✦ ❖ ✦ ❖ ✦</div>
+
+  <!-- ========== FAQ (NEW) ========== -->
+  <section id="faq">
+    <h2 class="realm-title">🔮 Wisdom of the Realm</h2>
+    <p class="realm-sub">Answers to the questions every traveler asks</p>
+
+    <details>
+      <summary>What is a sign-up bonus?</summary>
+      <p>It is a reward a bank pays you for opening an account or card. You usually must meet a simple condition first, like making a purchase or a deposit.</p>
+    </details>
+    <details>
+      <summary>Will applying hurt my credit score?</summary>
+      <p>Credit cards often need a "hard inquiry," which may lower your score a little for a short time. Many checking accounts use only a "soft pull," which does not affect your score. Apply only for what you truly need.</p>
+    </details>
+    <details>
+      <summary>What is a direct deposit?</summary>
+      <p>It is money sent straight into your account, such as a paycheck or government benefits. Many bonuses require one. Transfers from PayPal or Venmo usually do not count.</p>
+    </details>
+    <details>
+      <summary>How long until I get my reward?</summary>
+      <p>It varies. Some arrive in a few days. Others take a few weeks after you meet all the terms. Always read the fine print of each offer.</p>
+    </details>
+    <details>
+      <summary>Are these accounts safe?</summary>
+      <p>The banks and partners listed here use FDIC-insured deposit accounts. Still, always confirm the latest details on each provider's official website before you join.</p>
+    </details>
+    <details>
+      <summary>How do referral links work?</summary>
+      <p>When you join through my link, the company often rewards both of us. You get your bonus, and I get a small thank-you. It costs you nothing extra.</p>
+    </details>
+  </section>
+
+  <div class="ornament">✦ ❖ ✦ ❖ ✦</div>
+
+  <!-- ========== GLOSSARY (NEW) ========== -->
+  <section id="glossary">
+    <h2 class="realm-title">📖 The Coin-Keeper's Glossary</h2>
+    <p class="realm-sub">Common terms, explained in plain words</p>
+    <div class="panel glossary">
+      <dl>
+        <dt>APR</dt>
+        <dd>The yearly interest rate on money you borrow. A 0% intro APR means no interest for a set time.</dd>
+        <dt>APY</dt>
+        <dd>The yearly rate your savings earn. A higher APY means more growth on your money.</dd>
+        <dt>Cash Back</dt>
+        <dd>A small share of your spending returned to you as money.</dd>
+        <dt>Credit Score</dt>
+        <dd>A number that shows how trustworthy you are with borrowing. Higher is better.</dd>
+        <dt>Direct Deposit</dt>
+        <dd>Money paid straight into your account, like a paycheck.</dd>
+        <dt>FDIC Insured</dt>
+        <dd>Your deposits are protected by the U.S. government, up to legal limits.</dd>
+        <dt>Hard vs. Soft Inquiry</dt>
+        <dd>A hard inquiry can lower your score a little. A soft inquiry does not affect it.</dd>
+        <dt>Statement Credit</dt>
+        <dd>A reward added to your account that lowers your balance.</dd>
+        <dt>Welcome / Sign-Up Bonus</dt>
+        <dd>The reward you earn for joining and meeting simple terms.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ========== DISCLOSURE (NEW, professional) ========== -->
+  <section id="disclosure">
+    <h2 class="realm-title">⚖️ A Fair Word</h2>
+    <p class="disclosure">
+      This page contains referral and affiliate links. When you join through them, I may earn a reward at no extra cost to you.
+      I share only offers I find valuable. Bonuses, rates, and terms change often, so please confirm all details on each provider's official site before you apply.
+      This is not financial advice. Choose what fits your own needs.
+    </p>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <div class="footer">
+    <span class="crest-small">⚜️</span>
+    May your vaults stay full and your quests be fruitful.<br>
+    &copy; 2025 Sajjad — Thank you for visiting the Realm of Riches.
+  </div>
+
 </div>
 
-      
-      <hr style="margin: 40px 0;"/>      
-</section>
-    <!-- 🏦 CHECKING ACCOUNTS SECTION -->
-    <section id="checking-accounts">
-      <h2>🏦 Checking Accounts with Bonus Offers</h2>
+<script>
+  // sprinkle twinkling stars across the realm
+  (function(){
+    var box = document.getElementById('stars');
+    if(!box) return;
+    var glyphs = ['✦','✧','⭑','✺','·'];
+    for(var i=0;i<40;i++){
+      var s = document.createElement('span');
+      s.className = 'star';
+      s.textContent = glyphs[Math.floor(Math.random()*glyphs.length)];
+      s.style.left = Math.random()*100 + '%';
+      s.style.top = Math.random()*100 + '%';
+      s.style.fontSize = (Math.random()*14 + 6) + 'px';
+      s.style.animationDelay = (Math.random()*5) + 's';
+      box.appendChild(s);
+    }
+  })();
+</script>
 
-        <div class="offer-block">
-<h2>💵 Get $100 by Joining Chime – One of the Easiest, No-Fee Banks!</h2>
-<p>Looking for a modern, hassle-free banking experience? <strong>Chime</strong> is one of the easiest banks to open an account with — no fees, no minimums, and fast sign-up. Perfect for students, freelancers, or anyone starting fresh!</p>
-
-<p>🎁 <strong>Bonus: Get $100</strong> just for joining and setting up a direct deposit.</p>
-
-<h3>🟢 How to Claim Your $100 Bonus:</h3>
-<ul>
-  <li>➡️ Use this referral link to sign up: <a href="https://chime.com/r/sajjademdadimahdimahalleh?c=s" target="_blank"><strong>Join Chime & Get $100</strong></a></li>
-  <li>🧾 Open a free Chime Checking Account</li>
-  <li>🏦 Receive a qualifying direct deposit of $200+ within 45 days</li>
-  <li>💳 Activate your Chime Visa® Debit Card within 14 days after deposit</li>
-</ul>
-
-<p>✅ Once done, both of us will receive <strong>$100</strong> — it’s a win-win!</p>
-
-<h4>🌟 Why Chime?</h4>
-<ul>
-  <li>🚫 No monthly fees, overdraft fees, or minimum balances</li>
-  <li>💰 Get paid up to 2 days early</li>
-  <li>📈 Build credit history with no annual fees</li>
-  <li>🛡️ Fee-free overdraft up to $200 with SpotMe*</li>
-  <li>⚡ Access up to $500 of your pay before payday</li>
-</ul>
-
-<p><a href="https://chime.com/r/sajjademdadimahdimahalleh?c=s" class="button" target="_blank">👉 Claim Your $100 Now</a></p>
-
-<p><small>Terms apply. Bonus is typically delivered within 2 business days after requirements are met. A qualifying direct deposit is $200+ from an employer, gig, or benefits — not PayPal/Venmo transfers.</small></p>
-
-            </div>
-        <div class="offer-block">
-          
-<h2>💳 Current – $100 Bonus & Build Credit Without Debt</h2>
-
-<p>
-  Current offers a modern checking account with a unique <strong>Build Card</strong> that works <strong>like a secured credit card</strong> — but without a hard credit check. Use your own money, build credit safely, and improve your credit score with responsible usage.
-</p>
-
-<h3>🎁 Get $100 When You Join</h3>
-<p>
-  Open a Current account and receive a qualifying direct deposit of $200 or more to earn your $100 bonus. Use the referral link or code below when signing up:
-</p>
-
-<ul>
-  <li>🔗 <strong>Referral Link:</strong> <a href="https://current.com/get-started/?creator_code=CWEVEU856&impression_id=b153fd79-23e5-4250-9038-e00bd11ec99d" target="_blank">Join Current & Get $100</a></li>
-  <li>💬 <strong>Referral Code:</strong> <code>CWEVEU856</code></li>
-</ul>
-
-<h3>🌟 Key Benefits</h3>
-<ul>
-  <li>📈 <strong>Build credit</strong> with the secured Build Card — no credit history or hard inquiry required</li>
-  <li>💳 Uses your own money — functions like a debit card, reports like a credit card</li>
-  <li>📊 Reports to major credit bureaus — can help improve your credit score</li>
-  <li>⚡ <strong>Get paid up to 2 days early</strong> with direct deposit</li>
-  <li>💸 Access up to <strong>$750</strong> with Paycheck Advance</li>
-  <li>🏦 <strong>Fee-free overdraft</strong> (with qualifying direct deposit)</li>
-  <li>💰 Earn up to <strong>4.00% APY</strong> on savings</li>
-  <li>🎯 Earn rewards points for purchases at restaurants and grocery stores</li>
-</ul>
-
-<h4>🧠 Important Note</h4>
-<p>
-  While this isn't a traditional credit card, activity with the Build Card is reported to credit bureaus and can impact your score. <strong>No hard credit check</strong> is required to apply.
-</p>
-
-<p>
-  <a class="button" href="https://current.com/get-started/?creator_code=CWEVEU856&impression_id=b153fd79-23e5-4250-9038-e00bd11ec99d" target="_blank">👉 Join Current & Claim Your $100 Bonus</a>
-</p>
-
-<p><small>Terms apply. $200+ direct deposit required to qualify for the bonus. Bonus is typically paid within a few business days of meeting eligibility. No credit check required. Subject to approval.</small></p>
-
-
-  </div>
-
-<div class="offer-block">
-  <h2>🦁 MoneyLion – Get $55 with RoarMoney Checking!</h2>
-  <p><strong>MoneyLion</strong> is a financial technology company that offers FDIC-insured digital banking products. Their flagship product, <strong>RoarMoney</strong>, is a powerful checking account packed with features:</p>
-
-  <ul>
-    <li>💰 <strong>Early Paycheck:</strong> Get paid up to 2 days early</li>
-    <li>🚫 <strong>No Hidden Fees:</strong> Transparent pricing, no surprises</li>
-    <li>🎁 <strong>Debit Card Rewards:</strong> Earn rewards on purchases of $10+ using Shake ‘N’ Bank – win up to 5x the purchase amount, up to $500/day!</li>
-  </ul>
-
-  <h3>🎉 How to Get Your $55 Bonus:</h3>
-  <ol>
-    <li>📝 Open a RoarMoney account using <strong><a href="https://mlion.us/$MercifulSajjad569" target="_blank">this referral link</a></strong></li>
-    <li>🏦 Make direct deposits of at least $100, twice, within 60 days</li>
-    <li>💸 Receive your $55: $5 after signing up, $50 after deposits</li>
-  </ol>
-
-  <p><a class="button" href="https://mlion.us/$MercifulSajjad569" target="_blank">👉 Open RoarMoney & Get $55</a></p>
-
-  <h4>✅ Bonus Details:</h4>
-  <ul>
-    <li>🗺️ Available nationwide</li>
-    <li>💳 No early account closure fee</li>
-    <li>🔍 Soft pull on credit (no hard inquiry)</li>
-    <li>⏱️ Bonuses can take up to 2 weeks after qualifying actions</li>
-  </ul>
-
-  <p><small>This promotion is available indefinitely, but terms can change anytime. Direct deposit must be from employer, government, or payroll provider.</small></p>
-</div>
-
-
-
-
-
-      
-        <div class="offer-block">
-<h2>🏦 Citi® Checking – Choose Your Welcome Bonus (Up to $1,500)</h2>
-<p>When you open a new eligible Citi® Checking Account, you can earn a generous cash bonus just by meeting simple deposit requirements.</p>
-
-<p><strong>Bonuses range from $325 to $1,500 — here's how:</strong></p>
-
-<ul>
-  <li><strong>💵 Earn $325:</strong> Make at least 2 Enhanced Direct Deposits (ACH transfers like Paychecks, Venmo, Zelle®, PayPal, Social Security, etc.) totaling $3,000 within 90 days.</li>
-  <li><strong>💸 Earn $750:</strong> Deposit and maintain $30,000–$199,999 in new funds for 90 days.</li>
-  <li><strong>💰 Earn $1,500:</strong> Deposit and maintain $200,000+ in new funds for 90 days.</li>
-</ul>
-
-<p><strong>Enhanced Direct Deposits (EDD)</strong> include:</p>
-<ul>
-  <li>Recurring payroll or pension payments</li>
-  <li>ACH deposits from apps like Zelle®, PayPal, Venmo</li>
-  <li>Government benefits and Social Security</li>
-</ul>
-
-<p><a class="button" href="https://banking.citi.com/cbol/OM/checking/choice/featured-offers/default.htm?flowID=MGM&venue=mgm&mgmrefid=1095915098" target="_blank">
-👉 Open Your Citi Account & Choose a Bonus
-</a></p>
-
-<h3>🔒 Eligibility & Notes:</h3>
-<ul>
-  <li>✔️ Must be 18+ and a U.S. citizen or resident</li>
-  <li>✔️ No Citi® Checking account in the last 365 days</li>
-  <li>✔️ Bonuses are paid within 30 days after qualifying</li>
-  <li>✔️ Subject to approval and tax reporting (1099-INT)</li>
-</ul>
-
-<p>💡 <strong>Bonus Tip:</strong> If you join using <em>my referral link</em>, I’ll also earn a referral bonus — and once your account is open, you can refer others too and earn up to <strong>$2,000</strong> in referral rewards!</p>
-
-<p><small>Terms apply. Offer valid through <strong>July 7, 2025</strong>. Visit Citi’s site for full details.</small></p>
-
-
-  </div>
-
-      
-
-</section>
-
-    
-    
-    <div class="footer">
-      &copy; 2025 Sajjad. Thanks for visiting!
-    </div>
-  </div>
 </body>
 </html>
